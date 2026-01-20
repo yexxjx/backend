@@ -70,7 +70,6 @@ public class Practice3 {
         boolean result6=id.equals("admin") && pw.equals("1234");
         System.out.println(result6);
 
-
 /*[문제 7] Scanner를 이용해 정수 하나를 입력받아, 그 수가 홀수이면서 7의 배수이면 true, 아니면 false를 출력하시오.
 입력 예시:
 정수를 입력하세요: 21
@@ -99,7 +98,7 @@ public class Practice3 {
 이름을 입력하세요: 강호동
 출력 예시 2:
 강호동 */
-        System.out.println("이름: "); String name=scan.next();
+        System.out.print("이름: "); String name=scan.next();
         String result9=name.equals("유재석")?name+"(방장)":name;
         System.out.println(result9);
 
@@ -122,8 +121,9 @@ public class Practice3 {
 섭씨 온도: 30.0
 출력 예시:
 화씨 온도: 86.0 */
-        System.out.println("섭씨 온도: "); double d4=scan.nextDouble();
-
+        System.out.print("섭씨 온도: "); double d4=scan.nextDouble();
+        double result11=(d4*9.0/5.0)+32;
+        System.out.println(result11);
 
 /*[문제 12] Scanner를 이용해 태어난 년도(int)를 입력받아, 2025년 기준 현재 나이를 계산하여 출력하시오.
 요구 조건:
@@ -132,6 +132,9 @@ public class Practice3 {
 태어난 년도: 1998
 출력 예시:
 2025년 기준 나이: 27세 */
+        System.out.print("태어난 년도: "); int i6=scan.nextInt();
+        int result12=(2025-i6);
+        System.out.println(result12+"세");
 
 /*[문제 13] Scanner를 이용해 키(cm)와 몸무게(kg)를 각각 double로 입력받아, BMI 지수를 계산하여 출력하시오.
 요구 조건:
@@ -142,6 +145,10 @@ BMI 공식: 몸무게(kg) / (키(m) * 키(m))
 몸무게(kg): 68.8
 출력 예시:
 BMI 지수: 22.34... */
+        System.out.print("키: "); double d5=scan.nextDouble();
+        System.out.print("몸무게: "); double d6=scan.nextDouble();
+        double result13=(d6/((d5/100.0)*(d5/100.0)));
+        System.out.println("BMI 지수"+result13);
 
 /*[문제 14] Scanner를 이용해 아이디와 이메일을 String으로 입력받습니다. 아이디가 "admin"이거나 또는 이메일이 "admin@test.com"이면 "관리자", 그렇지 않으면 "일반 사용자"를 출력하시오.
 입력 예시:
