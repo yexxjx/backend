@@ -4,6 +4,14 @@ import java.util.Scanner;
 
 public class Practice3 {
     public static void main(String[] args) {
+
+        // 1. 데이터 입력 방식 선택 : (1)html, input (2)prompt, (3)scanner
+        // 2. 처리 로직 :
+        // 3. 출력하는 방식 선택 : (1)innerHTML, (2)console, (3)System.out.print
+
+
+
+
         /*[문제 1] Scanner를 이용해 국어, 영어, 수학 점수를 각각 정수(int)로 입력받아, 총점과 평균을 계산하여 출력하시오.
 입력 예시:
 국어 점수: 85
@@ -13,9 +21,9 @@ public class Practice3 {
 총점: 255
 평균: 85.0 */
         Scanner scan=new Scanner(System.in);
-        System.out.print("국어 : "); int kor=scan.nextInt();
-        System.out.print("영어 : "); int eng=scan.nextInt();
-        System.out.print("수학 : "); int math=scan.nextInt();
+        System.out.print("국어: "); int kor=scan.nextInt();
+        System.out.print("영어: "); int eng=scan.nextInt();
+        System.out.print("수학: "); int math=scan.nextInt();
         int result1=(kor+eng+math);
         System.out.println("총점: "+result1);
         System.out.println("평균: "+result1/3.0);
@@ -26,7 +34,7 @@ public class Practice3 {
 반지름을 입력하세요: 10.5
 출력 예시:
 원의 넓이: 346.185 */
-        System.out.print("반지름 : "); double d1=scan.nextDouble();
+        System.out.print("반지름: "); double d1=scan.nextDouble();
         double result2=(d1*d1*3.14);
         System.out.println(result2);
         
@@ -37,8 +45,8 @@ public class Practice3 {
 두 번째 실수: 200
 출력 예시:
 비율: 25.0% */
-        System.out.print("첫 번째 실수 : "); double num1=scan.nextDouble();
-        System.out.print("두 번째 실수 : "); double num2=scan.nextDouble();
+        System.out.print("첫 번째 실수: "); double num1=scan.nextDouble();
+        System.out.print("두 번째 실수: "); double num2=scan.nextDouble();
         double result3=(num1/num2*100);
         System.out.println(result3+"%");
 
@@ -47,7 +55,7 @@ public class Practice3 {
 정수를 입력하세요: 17
 출력 예시:
 결과: true */
-        System.out.print("정수 : "); int i1=scan.nextInt();
+        System.out.print("정수: "); int i1=scan.nextInt();
         System.out.println(i1%2==1? "true":"false");
 
 /*[문제 5] Scanner를 이용해 정수 하나를 입력받아, 그 수가 7의 배수이면 true, 아니면 false를 출력하시오.
@@ -55,7 +63,7 @@ public class Practice3 {
 정수를 입력하세요: 28
 출력 예시:
 결과: true */
-        System.out.print("정수 : "); int i2= scan.nextInt();
+        System.out.print("정수: "); int i2= scan.nextInt();
         System.out.println(i2%7==0? "true":"false");
 
 /*[문제 6] Scanner를 이용해 아이디와 비밀번호를 String으로 입력받아, 아이디가 "admin"이고 비밀번호가 "1234"와 모두 일치하면 true, 아니면 false를 출력하시오.
@@ -75,7 +83,7 @@ public class Practice3 {
 정수를 입력하세요: 21
 출력 예시:
 결과: true */
-        System.out.print("정수 : "); int i3= scan.nextInt();
+        System.out.print("정수: "); int i3= scan.nextInt();
         System.out.println(i3%2==1 && i3%7==0);
 
 /*[문제 8] Scanner를 이용해 1차 점수와 2차 점수를 각각 int로 입력받아, 두 점수의 총점이 150점 이상이면 "합격", 아니면 "불합격"을 출력하시오.
@@ -123,17 +131,17 @@ public class Practice3 {
 화씨 온도: 86.0 */
         System.out.print("섭씨 온도: "); double d4=scan.nextDouble();
         double result11=(d4*9.0/5.0)+32;
-        System.out.println(result11);
+        System.out.println("화씨 온도: "+result11);
 
 /*[문제 12] Scanner를 이용해 태어난 년도(int)를 입력받아, 2025년 기준 현재 나이를 계산하여 출력하시오.
 요구 조건:
-공식: 2025 - 태어난 년도
+공식: 2026 - 태어난 년도
 입력 예시:
 태어난 년도: 1998
 출력 예시:
-2025년 기준 나이: 27세 */
+2025년 기준 나이: 28세 */
         System.out.print("태어난 년도: "); int i6=scan.nextInt();
-        int result12=(2025-i6);
+        int result12=(2026-i6);
         System.out.println(result12+"세");
 
 /*[문제 13] Scanner를 이용해 키(cm)와 몸무게(kg)를 각각 double로 입력받아, BMI 지수를 계산하여 출력하시오.
@@ -147,7 +155,7 @@ BMI 공식: 몸무게(kg) / (키(m) * 키(m))
 BMI 지수: 22.34... */
         System.out.print("키: "); double d5=scan.nextDouble();
         System.out.print("몸무게: "); double d6=scan.nextDouble();
-        double result13=(d6/((d5/100.0)*(d5/100.0)));
+        double result13=(d6/(d5/100.0)*(d5/100.0));
         System.out.println("BMI 지수"+result13);
 
 /*[문제 14] Scanner를 이용해 아이디와 이메일을 String으로 입력받습니다. 아이디가 "admin"이거나 또는 이메일이 "admin@test.com"이면 "관리자", 그렇지 않으면 "일반 사용자"를 출력하시오.
@@ -158,7 +166,8 @@ BMI 지수: 22.34... */
 결과: 관리자 */
         System.out.print("아이디: "); String s1=scan.next();
         System.out.print("이메일: "); String s2=scan.next();
-        System.out.println(s1.equals("admin") || s2.equals("admin@test.com")? "관리자":"일반 사용자");
+        String result14=(s1.equals("admin") || s2.equals("admin@test.com")? "관리자":"일반 사용자");
+        System.out.println(result14);
 
 /*[문제 15] Scanner를 이용해 100점 만점의 점수(int)를 입력받아, 점수에 따라 아래와 같이 등급을 부여하고 출력하시오.
 90점 이상: 'A'
@@ -169,12 +178,14 @@ BMI 지수: 22.34... */
 출력 예시:
 등급:B */
         System.out.print("점수: "); int i7=scan.nextInt();
-
+        System.out.println(i7>=90?"A":i7>=80?"B":i7<70?"C":"");
 
 /*[문제 16] Scanner를 이용해 나이(int)를 입력받아, 20대(20세 이상 29세 이하)에 해당하는 경우 "이벤트 대상입니다."를, 그렇지 않으면 "이벤트 대상이 아닙니다."를 출력하시오.
 입력 예시:
 나이를 입력하세요: 25
 출력 예시:
 이벤트 대상입니다. */
+        System.out.print("나이: "); int i8=scan.nextInt();
+        System.out.println(i8>=20&&i8<=29?"이벤트 대상입니다.":"이벤트 대상이 아닙니다.");
     }
 }
