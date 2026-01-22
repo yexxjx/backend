@@ -292,9 +292,14 @@ viewer: '콘텐츠 조회만 가능합니다.'
 두 번째 정수: 4
 세 번째 정수: 8
 출력 예시: 4, 8, 17 */
-        System.out.print("첫 번째 정수: "); int number1 = scan.nextInt();
-        System.out.print("두 번째 정수: "); int number2 = scan.nextInt();
-        System.out.print("세 번째 정수: "); int number3 = scan.nextInt();
+        // 스왑 : 두 변수간의 자료 교환, int tep=data1; data1=data2; data2=temp;
+        System.out.print("첫 번째 정수: "); int data1 = scan.nextInt();
+        System.out.print("두 번째 정수: "); int data2 = scan.nextInt();
+        System.out.print("세 번째 정수: "); int data3 = scan.nextInt();
+        if(data1>data2){int temp=data1; data1=data2; data2=temp;}
+        if(data1>data3){int temp=data1; data1=data3; data3=temp;}
+        if(data2>data3){int temp=data2; data2=data3; data3=temp;}
+        System.out.printf("%d %d %d \n", data1, data2, data3);
 
 /*[문제 15] 가위바위보 게임
 지시: 두 명의 플레이어가 참여하는 가위바위보 게임을 만드시오.
@@ -307,8 +312,15 @@ viewer: '콘텐츠 조회만 가능합니다.'
 플레이어1 (0:가위, 1:바위, 2:보): 1
 플레이어2 (0:가위, 1:바위, 2:보): 0
 출력 예시: 플레이어1 승리 */
-        System.out.print("플레이어1(0:가위, 1:바위, 2:보): "); int player1 = scan.nextInt();
-        System.out.print("플레이어2(0:가위, 1:바위, 2:보): "); int player2 = scan.nextInt();
+        System.out.print("플레이어1(0:가위, 1:바위, 2:보): "); int p1 = scan.nextInt();
+        System.out.print("플레이어2(0:가위, 1:바위, 2:보): "); int p2 = scan.nextInt();
+        if(p1==0&&p2==2 || p1==1&&p2==0 || p1==2&&p2==1){
+        System.out.println("플레이어1 승리");}
+            else if(p1==p2){
+        System.out.println("무승부");}
+            else{
+            System.out.println("플레이어2 승리");}
 
+        // 다른 방법(p1 승리) : p1==(p2+1)%3  (2+1)%3==0
     }
 }
