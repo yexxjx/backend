@@ -12,6 +12,8 @@ public class Exam1 {
         float floatValue=longValue; // long 타입>float 타입 변환
         double doubleValue=floatValue; // float 타입>double 타입 변환
 
+
+
         // (2) 연산 중 (자동) 타입변환
         // byte+byte=int, byte+short=int, int+int=int, int이하 피연산자들은 연산하면 int로 결과
         // long/float/double 는 피연산자 중에 더 큰 타입으로 결과
