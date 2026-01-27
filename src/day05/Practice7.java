@@ -114,7 +114,10 @@ public class Practice7 {
 1. main 함수에서 Player 객체 2개를 생성하세요.
 2. 첫 번째 객체에는 "손흥민", 90, 95를, 두 번째 객체에는 "이강인", 85, 92를 각각 저장하세요.
 3. 두 객체의 power와 speed의 합을 각각 계산하고, 합이 더 높은 선수의 이름을 출력하세요.*/
-        Player p1 = new Player();
+
+        Player p1 = new Player(); // new 인스턴스화 키워드, 메모리 생성되면서 주소값 가짐
+        // 생성된 객체는 변수에 저장하지 않으면 일정시간이 지나고 GC(쓰레기수집가)를 삭제한다.
+        // .(접근연산자/참조연산자)
         p1.name = "손흥민";
         p1.power = 90;
         p1.speed = 95;
@@ -166,8 +169,11 @@ public class Practice7 {
         int age = scan.nextInt();
         System.out.println("MBTI: ");
         String mbti = scan.next();
+        user.name=name;
+        user.age=age;
+        user.mbti=mbti;
 
         System.out.println("--- 프로필 ---");
-        System.out.println("이름: [" + name + "], 나이: [" + age + "], mbti: [" + mbti + "]");
+        System.out.printf("이름: %s , 나이: %d , mbti: %s \n", user.name, user.age, user.mbti );
     }
 }
