@@ -33,6 +33,9 @@ public class Practice8 {
         System.out.println("판매 결과 = " + result6);
 
         // [7]
+        Visualizer visualizer=new Visualizer();
+        String star=visualizer.getStars(5);
+        System.out.println(star);
 
         // [8]
 
@@ -108,8 +111,12 @@ public class Practice8 {
 1. 정수 하나를 매개변수로 받아, 그 숫자만큼 "★" 문자를 반복하여 하나의 문자열로 만들어 반환하는 getStars 메소드를 정의하세요.
 2. main 함수에서 getStars(5)를 호출하여 반환된 문자열 "★★★★★"를 출력하세요.*/
 class Visualizer{
-    int 정수3;
-
+    String getStars(int count){
+        String result="";
+        for(int index=0;index<count;index++){
+            result+="★";
+        }return result;
+    }
 }
 
 /*[문제 8] ParkingLot 클래스를 만드세요.
