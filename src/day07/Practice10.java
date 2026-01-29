@@ -11,9 +11,13 @@ public class Practice10 {
 
         // [2]
         Score score=new Score();
+        score.setScore(85);
+        score.setScore(120);
 
         // [3]
         BankAccount1 b1=new BankAccount1();
+
+
 
         // [4]
         // [5]
@@ -48,8 +52,14 @@ class Member1{
 지 확인하세요.*/
 class Score{
     private int score;
-    public void setScore(int score) {this.score = score;}
-
+    public void setScore(int score) {
+        if(score>=0 && score<=100){
+            this.score=score;
+            System.out.println(score+"점 설정");
+        }else{
+            System.out.println("유효하지 않은 점수입니다.");
+        }
+    }
 }
 
 /*[문제 3] BankAccount1 클래스를 만드세요.
@@ -61,10 +71,7 @@ class Score{
 인하세요.*/
 class BankAccount1{
     private String accountNumber;
-
-    public String getAccountNumber() {
-        return accountNumber;
-    }
+    public String getAccountNumber() {return accountNumber;}
 }
 
 /*[문제 4] CircleCalculator 클래스를 만드세요.
@@ -99,6 +106,6 @@ class TicketMachine{
 class GameConfig{
     public static final char MAX_LEVEL=99;
     public static final char MAX_HP=10000;
-    public static final char GAME_TITLE=100;
+    public static final String GAME_TITLE="My RPG";
 }
 
