@@ -1,5 +1,6 @@
 package day08;
 
+import com.sun.security.jgss.GSSUtil;
 import day07.package1.A;
 
 import java.awt.image.AreaAveragingScaleFilter;
@@ -59,8 +60,6 @@ public class Practice11 {
         ArrayList<Book> library=new ArrayList<>();
         library.add(new Book("제목1", "저자1"));
         library.add(new Book("제목2", "저자2"));
-
-
         library.add(new Book("제목3", "저자3"));
 
         for(Book book:library){
@@ -72,6 +71,20 @@ public class Practice11 {
 2. 만약 사용자가 "종료" 라는 단어를 입력하면, 입력을 멈추고 그때까지 리스트에 저장된 모든 내용을 출력한 뒤 프로그램을 종료하세요.*/
         Scanner scan=new Scanner(System.in);
         ArrayList<String> letter=new ArrayList<>();
+        for( ; ; ){
+            System.out.println("문자열: ");
+            String input=scan.nextLine();
+
+            if(input.equals("종료")){
+                break;
+            }
+            letter.add(input);
+        }
+        System.out.println("===저장된 모든 내용===");
+        for(String s1:letter){
+            System.out.println(s1);
+        }
+        System.out.println("프로그램 종료");
 
 /*[문제 8] "국어", "수학", "사회", "과학"을 요소로 가지는 ArrayList를 생성하세요.
 1. .set(인덱스, 요소) 메소드를 사용하여 1번 인덱스의 "수학"을 "영어"로 수정하세요.
@@ -92,7 +105,6 @@ class Book{
     public Book(String title, String author) {
         this.title = title;
         this.author = author;
-
     }
 
     @Override
