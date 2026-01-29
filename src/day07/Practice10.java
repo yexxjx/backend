@@ -61,7 +61,10 @@ class Score{
 인하세요.*/
 class BankAccount1{
     private String accountNumber;
-    public String getAccountNumber(){return accountNumber;}
+
+    public String getAccountNumber() {
+        return accountNumber;
+    }
 }
 
 /*[문제 4] CircleCalculator 클래스를 만드세요.
