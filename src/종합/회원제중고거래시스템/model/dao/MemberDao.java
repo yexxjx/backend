@@ -14,7 +14,6 @@ public class MemberDao {
     private int currentMno = 1;
     public boolean signup( String mid , String mpw , String mname , String mphone ){
         System.out.println("MemberDao.signup");
-        System.out.println("mid = " + mid + ", mpw = " + mpw + ", mname = " + mname + ", mphone = " + mphone);
         MemberDto memberDto = new MemberDto( currentMno , mid , mpw , mname , mphone );
         boolean result = members.add( memberDto );
         if( result ){ currentMno++; }

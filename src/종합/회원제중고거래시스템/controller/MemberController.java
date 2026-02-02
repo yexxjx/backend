@@ -10,7 +10,6 @@ public class MemberController {
     private MemberDao md=MemberDao.getInstance();
     public boolean signup(String mid,String mpw,String mname, String mphone){
         System.out.println("MemerController.singup");
-        System.out.println("mid = " + mid + ", mpw = " + mpw + ", mname = " + mname + ", mphone = " + mphone);
         boolean result=md.signup(mid, mpw, mname, mphone);
         return result;
     }
