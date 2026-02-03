@@ -1,9 +1,7 @@
-package 종합.과제.view;
+package 종합.과제2인.view;
 
-import 종합.과제.controller.RegiController;
-import 종합.과제.model.dto.RegiDto;
+import 종합.과제2인.controller.RegiController;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class RegiView {

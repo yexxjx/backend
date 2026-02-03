@@ -1,7 +1,7 @@
-package 종합.과제2.view;
+package 종합.과제1.view;
 
-import 종합.과제2.controller.WaitingController;
-import 종합.과제2.model.dto.WaitingDto;
+import 종합.과제1.controller.WaitingController;
+import 종합.과제1.model.dto.WaitingDto;
 
 import java.util.ArrayList;
 import java.util.Scanner;

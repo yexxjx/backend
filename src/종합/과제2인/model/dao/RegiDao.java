@@ -1,6 +1,6 @@
-package 종합.과제.model.dao;
+package 종합.과제2인.model.dao;
 
-import 종합.과제.model.dto.RegiDto;
+import 종합.과제2인.model.dto.RegiDto;
 
 import java.util.ArrayList;
 

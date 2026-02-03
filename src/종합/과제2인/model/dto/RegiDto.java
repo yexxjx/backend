@@ -1,4 +1,4 @@
-package 종합.과제.model.dto;
+package 종합.과제2인.model.dto;
 
 public class RegiDto {
     private int no;

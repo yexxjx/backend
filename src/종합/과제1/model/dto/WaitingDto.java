@@ -1,4 +1,4 @@
-package 종합.과제2.model.dto;
+package 종합.과제1.model.dto;
 
 public class WaitingDto {
     private int no;

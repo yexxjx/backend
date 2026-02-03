@@ -1,7 +1,6 @@
-package 종합.과제.controller;
+package 종합.과제2인.controller;
 
-import 종합.과제.model.dao.RegiDao;
-import 종합.과제.model.dto.RegiDto;
+import 종합.과제2인.model.dao.RegiDao;
 
 public class RegiController {
     private RegiController(){};
