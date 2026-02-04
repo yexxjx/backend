@@ -1,4 +1,8 @@
 -- 아래 문제는 'practice2' 데이터베이스 생성 후 진행 합니다.
+drop database if exists practice2;
+create database practice2;
+use practice2;
+
 -- [문제 1]아래 조건에 맞는 members 테이블을 생성하는 SQL을 작성하세요.
 -- 테이블명: members
 -- 컬럼 정보
@@ -12,8 +16,8 @@ create table members(
 member_id int auto_increment,
 constraint primary key(member_id),
 member_name varchar(50) not null,
-email varchar(100) not null unique,
-joint_date datetime default now(),
+email varchar(100) unique not null,
+join_date datetime default now(),
 is_active bool default true
 );
 select*from members;
@@ -51,7 +55,7 @@ create table orders(
 order_id bigint auto_increment,
 constraint primary key(order_id),
 member_id int,
-constraint foreign key(member_id) references members(member_id),
+constraint foreign key(member_id) references members(member_id) on delete cascade,
 order_date datetime default now(),
 total_price int unsigned not null
 );
@@ -90,7 +94,7 @@ select*from order_items;
 -- enrolled_date (입학일): date
 
 create table students(
-studednt_id varchar(10),
+student_id varchar(10),
 constraint primary key(student_id),
 student_name varchar(30) not null,
 major varchar(50),
@@ -135,7 +139,7 @@ constraint primary key(board_id),
 title varchar(200) not null,
 content text not null,
 writer_id int,
-constraint foreign key(member_id) references members(member_id),
+constraint foreign key(writer_id) references members(member_id),
 created_at datetime default now()
 );
 select*from boards;
@@ -156,7 +160,7 @@ constraint primary key(comment_id),
 board_id int,
 constraint foreign key (board_id) references boards(board_id),
 writer_id int,
-constraint foreign key (member_id) references members(member_id),
+constraint foreign key (writer_id) references members(member_id),
 content varchar(300) not null,
 created_at datetime default now()
 );
@@ -198,7 +202,7 @@ create table reviews(
 review_id int auto_increment,
 constraint primary key(review_id),
 product_id int,
-constraint foreign key (product_id) references proudcts(product_id),
+constraint foreign key (product_id) references products(product_id),
 member_id int,
 constraint foreign key (member_id) references members(member_id),
 rating tinyint unsigned not null,

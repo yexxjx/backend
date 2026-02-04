@@ -28,7 +28,6 @@ create table test3(
 문자속성3 text, 문자속성4 longtext, -- 4G 대용량,
 논리속성 bool -- true 또는 false, tinyint 취급, 1 또는 0
 );
-
 select*from test3;
 
 -- [*] 방문록 기록하는 테이블 설계
@@ -45,6 +44,9 @@ phone char(13) -- 연락처 최대 13글자까지 고정길이 문자
 );
 select*from waiting;
 
+drop table if exists test5;
+drop table if exists test4;
+
 -- [6] 제약조건 : 테이블 내 데이터들의 문제의 결함이 되는 입력 방지/해결
 create table test4(
 # 속성명 타입 제약조건명
@@ -57,6 +59,7 @@ constraint primary key(속성명4)
 							    -- 중복없음 unique+빈칸없음 not null, 학번/사번/주민등록번호/제품번호 등
 							     -- constraint primary key(속성명5)
 );
+
 create table test5(
 속성명1 bigint,
 -- foreign key? fk(참조/외래), 다른 테이블의 기본키(pk) 참조
@@ -66,5 +69,35 @@ create table test5(
 																 -- cascade? pk가 삭제/수정될 때 fk 필드의 레코드도 같이 삭제 <게시물 삭제되면 댓글도 같이 삭제>
                                                                   -- set null? pk가 삭제/수정될 때 fk는 null 변경 관계 <게시물 삭제되면 댓글 참조는 null>
 constraint foreign key(속성명1) references test4(속성명4) on delete set null
-)；
+);
+select*from test5;
 
+-- [5] 회웑제 게시판 설계
+-- 관례 순서
+drop database if exists boradservice6; -- 이미 존재할 수 있으므로 데이터베이스 삭제
+create database boardservice6;
+use boardservice6;
+
+create table member(
+mno int auto_increment, -- 회원번호, 정수타입, 자동번호 부여
+mid varchar(30) not null unique, -- 회원아이디, 문자타입(30), 빈칸불가능, 중복불가능
+mpw varchar(30) not null, -- 회원비밀번호, 문자타입(30), 빈칸불가능
+mname varchar(10), -- 회원닉네임, 문자타입(10)
+mphone char(13), -- 회원연락처, 문자타입(13)
+constraint primary key(mno) -- 회원번호 틀 pk(식별키) 선정
+);
+select*from member;
+
+create table product(
+pno int auto_increment,
+pname varchar(100) not null unique,
+pprice int unsigned default 0, -- 가격이므로 음수는 필요없어서 unsigned, 초기값 생략시 0
+pcomment longtext, -- 최대 4GB까지 가능한 문자타입
+pdate datetime default now(), -- 날짜/시간타임, 기본값을 현재 시스템 날짜/시간 자동 부여
+mno int, -- fk로 사용할 필드명의 타입은 pk 필드명과 일치, 필드/속성명 일치 권장
+constraint primary key(pno), -- pno 속성에 pk 설정
+constraint foreign key(mno) references member(mno) on delete cascade -- 회원이 탈퇴하면 그 회원의 제품도 삭제
+);
+select*from product;
+-- ER 다이어그램 : 여러 객체 틀 간의 크게 시각적, ERD 다이어그램 : 데이터베이스 테이블 간의 관계 시각적
+-- menu database > reverse engineer 
