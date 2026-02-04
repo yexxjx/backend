@@ -8,7 +8,7 @@ public class Tool implements TestInterface {
     }
 
     @Override
-    public void method(int x){
+    public void method2(int x){
         System.out.println("해당 메소드 구현");
     }
 }

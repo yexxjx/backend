@@ -34,6 +34,7 @@ public class MemberView {
     }
 
     private ProductView pv=ProductView.getInstance();
+
     public void login(){
         System.out.println("아이디: "); String mid=scan.next();
         System.out.println("비밀번호: "); String mpw=scan.next();
