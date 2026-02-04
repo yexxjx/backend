@@ -23,6 +23,8 @@ public class Pracice12 {
 
         // [4]
         Triangle triangle=new Triangle();
+        Figure figure=triangle;
+        // triangle 클래스는 figure로부터 상속받았기 때문
 
         // [5]
         Shape shape = new Circle();
@@ -33,7 +35,6 @@ public class Pracice12 {
         ArrayList <Beverage> beverages=new ArrayList<>();
         beverages.add(new Coke());
         beverages.add(new Coffee());
-
 
         // [8]
         // [9]
@@ -74,8 +75,14 @@ class Cat extends Animal{
 2. Machine을 상속받고, 생성자에서 "자식 클래스 생성자 실행"을 출력하는 Computer 클래스를 만드세요.
 3. main 함수에서 Computer 객체를 생성할 때, 콘솔에 출력되는 생성자 호출 순서를 확인하세요.*/
 class Machine{
+    public Machine() {
+        System.out.println("부모 클래스 생성자 실행");
+    }
 }
 class Computer extends Machine{
+    public Computer() {
+        System.out.println("자식 클래스 생성자 실행");
+    }
 }
 
 /*[문제 4] 다형성: 자동 타입 변환 (Upcasting)
