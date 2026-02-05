@@ -75,7 +75,7 @@ INSERT INTO orders VALUES(NULL, 1004, '최수아', 2, '2023-07-10');
 -- price : 17000
 -- stock : 25
 -- pub_date : '2023-03-01'
-insert into books values(1012, "MySQL실습", "김민수", "컴퓨터", 17000, 25, "2023-03-01");
+insert into books(book_id, title, author, genre, price, stock, pub_date) values(1012, "MySQL실습", "김민수", "컴퓨터", 17000, 25, "2023-03-01");
 
 -- [문제 2]books 테이블에 다음 정보를 가진 도서를 추가하세요.
 -- book_id : 1013
@@ -85,14 +85,14 @@ insert into books values(1012, "MySQL실습", "김민수", "컴퓨터", 17000, 2
 -- price : 22000
 -- stock : NULL
 -- pub_date : '2022-09-10'
-insert into books values(1013, "데이터베이스 개론", "이영희", "컴퓨터", 22000, NULL, "2022-09-10");
+insert into books(book_id, title, author, genre, price, stock, pub_date) values(1013, "데이터베이스 개론", "이영희", "컴퓨터", 22000, NULL, "2022-09-10");
 
 -- [문제 3]orders 테이블에 다음 정보를 가진 주문 데이터를 추가하세요.(※ order_id는 AUTO_INCREMENT)
 -- book_id : 1002
 -- customer : '최지훈'
 -- order_qty : 1
 -- order_date : '2023-08-15'
-insert into orders values(NULL, 1002, "최지훈", 1, "2023-08-15");
+insert into orders(book_id, customer,order_qty,order_date) values( 1002, "최지훈", 1, "2023-08-15");
 
 -- [문제 4]books 테이블에서 book_id가 1004 인 도서의 price를 15000 으로 수정하세요.
 update books set price=15000 where book_id=1004;
