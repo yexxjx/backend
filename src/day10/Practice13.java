@@ -2,7 +2,20 @@ package day10;
 
 public class Practice13 {
     public static void main(String[] args) {
+    // [1] 다형성특징 : 상속(+객체) VS 인터페이스 (-객체)
+        Cat cat=new Cat();
+        Dog dog=new Dog();
+        cat.makeSound();
+        dog.makeSound();
 
+    // [3]
+
+
+    // [5]
+        Duck flyable=new Duck();
+        Swimmable swimmable=new Duck();
+        flyable.fly();
+        swimmable.swimmable();
     }
 }
 
@@ -11,6 +24,19 @@ public class Practice13 {
 2. Soundable 인터페이스를 구현(implements)하는 Cat 클래스와 Dog 클래스를 만드세요.
 3. 각 클래스에서 makeSound() 메소드를 오버라이딩하여, 각각 "야옹", "멍멍"을 출력하도록 구현하세요.
 4. main 함수에서 Cat 객체와 Dog 객체를 생성하고, 각 객체의 makeSound() 메소드를 호출하여 결과를 확인하세요.*/
+interface Soundable{public abstract void makeSound();} // 추상메소드는 {} 구현부가 없음
+class Cat implements Soundable { // 해당 추상메소드를 가진 인터페이스를 구현하면 구현(객)체
+    @Override
+    public void makeSound() {
+        System.out.println("야옹");
+    }
+}
+class Dog implements Soundable { // 상속과 다르게 무조건 오버라이딩 필수
+    @Override
+    public void makeSound() {
+        System.out.println("멍멍");
+    }
+}
 
 /*[문제 2] 인터페이스 상수
 1. RemoteControl 인터페이스를 만드세요.
@@ -25,6 +51,19 @@ public class Practice13 {
 3. main 함수에서 Runnable 타입의 변수 runner를 선언하세요.
 4. runner 변수에 new Person()을 대입하여 run() 메소드를 호출하고, 그 다음 new Car()를 대입하여 run() 메소드를 호출하
 여 결과가 다르게 나오는 것을 확인하세요.*/
+interface Runnable{void run();}
+class Person implements Runnable{
+    @Override
+    public void run() {
+        System.out.println("사람이 달립니다.");
+    }
+}
+class Car implements Runnable{
+    @Override
+    public void run() {
+        System.out.println("자동차가 달립니다.");
+    }
+}
 
 /*[문제 4] 다형성을 활용한 매개변수
 1. "공격!"이라는 추상 메소드 attack()을 가진 Attackable 인터페이스를 정의하세요.
@@ -34,11 +73,27 @@ useWeapon(Attackable weapon) 메소드를 만드세요.
 4. main 함수에서 Sword 객체와 Gun 객체를 생성한 뒤, 이 객체들을 Character의 useWeapon() 메소드에 인자로 전달하여
 동작을 확인하세요.*/
 
+
 /*[문제 5] 다중 인터페이스 구현
 1. "하늘을 납니다."를 출력하는 fly() 추상 메소드를 가진 Flyable 인터페이스를 만드세요.
 2. "물에서 헤엄칩니다."를 출력하는 swimmable() 추상 메소드를 가진 Swimmable 인터페이스를 만드세요.
 3. Duck 클래스가 Flyable과 Swimmable 두 인터페이스를 모두 구현하도록 작성하세요.
 4. main 함수에서 Duck 객체를 생성하고, fly()와 swimmable() 메소드를 모두 호출하여 결과를 확인하세요.*/
+interface Flyable{void fly();} // public abstract 생략 가능
+interface Swimmable{void swimmable();}
+class Duck implements Flyable,Swimmable{ // 구현은 2개이상 인터페이스 가능
+
+    @Override
+    public void fly() {
+        System.out.println("하늘을 납니다.");
+    }
+
+    @Override
+    public void swimmable() {
+        System.out.println("물에서 헤엄칩니다.");
+    }
+}
+
 
 /*[문제 6] instanceof와 인터페이스
 1. 문제 5에서 만든 Flyable, Swimmable 인터페이스와 Duck 클래스를 활용합니다.
