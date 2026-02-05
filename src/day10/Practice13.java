@@ -8,7 +8,14 @@ public class Practice13 {
         cat.makeSound();
         dog.makeSound();
 
+    // [2]
+
+
     // [3]
+    // [4]
+        Character character=new Character();
+        Sword sword=new Sword();
+        Gun gun=new Gun();
 
 
     // [5]
@@ -44,6 +51,9 @@ class Dog implements Soundable { // 상속과 다르게 무조건 오버라이�
 하세요.
 3. main 함수에서 객체를 생성하지 않고, RemoteControl.MAX_VOLUME과 같이 인터페이스 이름으로 직접 접근하여 두 상수
 를 출력하세요.*/
+interface RemoteControl{}
+
+
 
 /*[문제 3] 다형성: 인터페이스 타입 변환
 1. "달립니다."라는 추상 메소드 run()을 가진 Runnable 인터페이스를 정의하세요.
@@ -72,7 +82,22 @@ class Car implements Runnable{
 useWeapon(Attackable weapon) 메소드를 만드세요.
 4. main 함수에서 Sword 객체와 Gun 객체를 생성한 뒤, 이 객체들을 Character의 useWeapon() 메소드에 인자로 전달하여
 동작을 확인하세요.*/
-
+interface Attackable{void attack();}
+class Sword implements Attackable{
+    @Override
+    public void attack() {
+        System.out.println("칼 공격");
+    }
+}
+class Gun implements Attackable{
+    @Override
+    public void attack() {
+        System.out.println("총 공격");
+    }
+}
+class Character{
+    public void useWeapon(Attackable weapon){weapon.attack();}
+}
 
 /*[문제 5] 다중 인터페이스 구현
 1. "하늘을 납니다."를 출력하는 fly() 추상 메소드를 가진 Flyable 인터페이스를 만드세요.
@@ -94,7 +119,6 @@ class Duck implements Flyable,Swimmable{ // 구현은 2개이상 인터페이스
     }
 }
 
-
 /*[문제 6] instanceof와 인터페이스
 1. 문제 5에서 만든 Flyable, Swimmable 인터페이스와 Duck 클래스를 활용합니다.
 2. main 함수에서 Duck 객체를 생성하고, Object 타입의 변수에 저장하세요.
@@ -108,6 +132,19 @@ class Duck implements Flyable,Swimmable{ // 구현은 2개이상 인터페이스
 3. main 함수에서 DataAccessObject 타입의 변수 dao를 선언하세요.
 4. dao에 new OracleDao()를 대입하여 save()를 호출하고, 그 다음 new MySqlDao()를 대입하여 save()를 호출하여 DB가
 쉽게 교체되는 것을 확인하세요.*/
+interface DataAccessObject{void save();}
+class OracleDao implements DataAccessObject{
+    @Override
+    public void save() {
+        System.out.println("데이터를 저장합니다.(Oracle DB에 저장)");
+    }
+}
+class MySqlDao implements DataAccessObject{
+    @Override
+    public void save() {
+        System.out.println("데이터를 저장합니다.(MySQL DB에 저장)");
+    }
+}
 
 /*[문제 8] 익명 구현 객체
 1. "환영합니다."를 출력하는 welcome() 추상 메소드를 가진 Greeting 인터페이스를 만드세요.

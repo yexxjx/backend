@@ -31,6 +31,10 @@ public class Pracice12 {
         shape.draw();
 
         // [6]
+        Vehicle vehicle=new Bus();
+        System.out.println(vehicle instanceof Bus);
+
+
         // [7]
         ArrayList <Beverage> beverages=new ArrayList<>();
         beverages.add(new Coke());
@@ -116,7 +120,10 @@ class Circle extends Shape {
 2. main 함수에서 Vehicle vehicle = new Bus(); 코드를 작성하세요.
 3. if문과 instanceof 연산자를 사용하여 vehicle 변수가 Bus 타입인지 확인하세요.
 4. 만약 Bus 타입이 맞다면, Bus 타입으로 강제 변환한 뒤 checkFare() 메소드를 호출하세요.*/
-
+class Vehicle{}
+class Bus extends Vehicle{void checkFare(){
+    System.out.println("요금을 확인합니다.");
+}}
 
 /*[문제 7] 다형성을 활용한 객체 배열
 1. "음료를 마십니다."를 출력하는 drink() 메소드를 가진 Beverage 클래스를 만드세요.
@@ -150,7 +157,12 @@ class Coffee extends Beverage{
 드를 만드세요.
 3. main 함수에서 Sword 객체와 Gun 객체를 생성한 뒤, 이 객체들을 Character의 use() 메소드에 인자로 전달하여 각기 다른
 결과가 출력되는 것을 확인하세요.*/
+class Weapon{}
+class Sword extends Weapon{}
+class Gun extends Weapon{}
+class Character{void attack(){
 
+}}
 
 /*[문제 9] 필드와 메소드의 오버라이딩 차이
 1. String name = "상위"; 필드와 method() 메소드("상위 메소드" 출력)를 가진 SuperClass를 만드세요.
