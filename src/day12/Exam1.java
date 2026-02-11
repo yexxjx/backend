@@ -101,6 +101,8 @@ public class Exam1 {
         // 기본 타입 > 문자열 변환
         String s1=100+""; // 기본타입자료+"" 100 > "100"
         String s2=String.valueOf(100); // 100 > "100"
+        System.out.println(s1);
+        System.out.println(s2);
 
     }
 }
