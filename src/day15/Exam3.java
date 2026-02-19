@@ -1,8 +1,6 @@
 package day15;
 
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.Set;
+import java.util.*;
 
 public class Exam3 {
     public static void main(String[] args) {
@@ -44,6 +42,20 @@ public class Exam3 {
         // (3) forEach
         set1.forEach((str) -> System.out.println(str));
         // 활용처 JDBC(ResultSet)
+        
+        // ======================================================
+        // Set 인터페이스
+        Set<Integer> set2;
+        set2 = new HashSet<>();
+
+        TreeSet<Integer> set = new TreeSet<>();
+        set.add(50); set.add(30); set.add(45);
+        System.out.println("set = " + set); // set = [30, 45, 50] 오름차순으로 자동 정렬
+        // 이진트리란? 각각의 노드(값)이 최대 2개의 노드(값) 연결하는 구조
+        // 현재 노드/가지보다 작은 값이 추가되면 왼쪽 노드/가지에 생성, 큰 값이 추가되면 오른쪽 노드/가지에 추가하는 구조
+        // 기본 값은 오름차순, descendingSet 내림차순
+        System.out.println(set.descendingSet());
+        // 활용처: 정렬(검색 최적화)
 
     }
 }
