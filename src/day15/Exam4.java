@@ -58,5 +58,6 @@ public class Exam4 {
         map=new Hashtable<>(); // 멀티스레드 동기화
         map=new TreeMap<>(); // 이진트리(정렬)
         Properties properties=new Properties(); // Hashtable하위클래스 프로젝트 설정값 파일
+        System.out.println("properties = " + properties);
     }
 }
