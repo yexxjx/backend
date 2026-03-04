@@ -1,8 +1,12 @@
 package day14;
 
+import javax.smartcardio.Card;
+import java.util.concurrent.ExecutionException;
+
 public class Practice16 {
 
     public static void main(String[] args) {
+        // [문제1]
         DeliveryTask task = new DeliveryTask();
         Thread thread1 = new Thread(task);
         thread1.start();
@@ -16,6 +20,10 @@ public class Practice16 {
         try {thread1.join();}
         catch(Exception e) {}
         System.out.println("[안내] 배달 처리 종료");
+
+        // [문제2]
+
+        // [문제3]
     }
 }
 

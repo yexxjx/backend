@@ -41,6 +41,8 @@ public class Pracice12 {
         beverages.add(new Coffee());
 
         // [8]
+        Sword sword=new Sword();
+        Gun gun=new Gun();
         // [9]
         // [10]
 
@@ -157,12 +159,20 @@ class Coffee extends Beverage{
 드를 만드세요.
 3. main 함수에서 Sword 객체와 Gun 객체를 생성한 뒤, 이 객체들을 Character의 use() 메소드에 인자로 전달하여 각기 다른
 결과가 출력되는 것을 확인하세요.*/
-class Weapon{}
-class Sword extends Weapon{}
-class Gun extends Weapon{}
-class Character{void attack(){
+class Weapon{
+    void attack(){System.out.println("무기로 공격합니다.");}
+}
+class Sword extends Weapon {
+    @Override
+    void attack() {System.out.println("검으로 공격합니다.");}
+}
+class Gun extends Weapon{
+    @Override
+    void attack(){System.out.println("총으로 공격합니다.");}
+}
 
-}}
+class Chracter{}
+
 
 /*[문제 9] 필드와 메소드의 오버라이딩 차이
 1. String name = "상위"; 필드와 method() 메소드("상위 메소드" 출력)를 가진 SuperClass를 만드세요.
