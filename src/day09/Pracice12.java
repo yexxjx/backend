@@ -34,7 +34,6 @@ public class Pracice12 {
         Vehicle vehicle=new Bus();
         System.out.println(vehicle instanceof Bus);
 
-
         // [7]
         ArrayList <Beverage> beverages=new ArrayList<>();
         beverages.add(new Coke());
@@ -43,8 +42,12 @@ public class Pracice12 {
         // [8]
         Sword sword=new Sword();
         Gun gun=new Gun();
+
         // [9]
+
         // [10]
+        Laptop laptop=new Laptop();
+
 
     }
 }
@@ -138,7 +141,6 @@ class Beverage{
         System.out.println("음료를 마십니다.");
     }
 }
-
 class Coke extends Beverage{
     @Override
     void drink(){
@@ -170,8 +172,7 @@ class Gun extends Weapon{
     @Override
     void attack(){System.out.println("총으로 공격합니다.");}
 }
-
-class Chracter{}
+class Character{}
 
 
 /*[문제 9] 필드와 메소드의 오버라이딩 차이
@@ -180,6 +181,8 @@ class Chracter{}
 세요.
 3. SuperClass obj = new SubClass(); 로 객체를 생성한 뒤, obj.name과 obj.method()를 각각 호출했을 때의 결과를 확인
 하고, 왜 다른 결과가 나오는지 주석으로 설명하세요.*/
+class SuperClass {}
+class SubClass{}
 
 /*[문제 10] 다중 상속 관계
 1. Device 클래스를 만드세요.
@@ -187,3 +190,7 @@ class Chracter{}
 3. Electronic을 상속받는 Laptop 클래스를 만드세요.
 4. main 함수에서 Laptop 객체를 생성한 뒤, 이 객체가 Electronic 타입과 Device 타입으로도 형 변환이 가능한지 instanceof
 연산자로 확인하고 결과를 출력하세요.*/
+
+class Device{}
+class Electronic extends Device{}
+class Laptop extends Electronic{}
